@@ -1,0 +1,10 @@
+include props
+
+.example-v2
+  hr
+  h2 #{propsBlockV2.title}
+  p Lorem ipsum dolor sit amet.
+  article
+    h3 #{propsBlockV2.article.title}
+    each item in propsBlockV2.article.paragraph
+      p #{item}

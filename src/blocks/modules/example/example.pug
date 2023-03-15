@@ -1,0 +1,18 @@
+include props
+
+//- миксин для примера (при разработке правильно будет вынести в отдельный компонент страницы - src/blocks/components/example/example-item)
+mixin example-item(props)
+  li.example-item
+    .example-item__title #{props.title.toUpperCase()}
+    .example-item__text !{props.text}
+//- \миксин
+
+.example
+  h2 #{propsBlock.title}
+  ul
+    each item in propsBlock.items.list
+      +example-item(item)
+  article
+    h3 #{propsBlock.article.title}
+    each item in propsBlock.article.paragraph
+      p #{item}
